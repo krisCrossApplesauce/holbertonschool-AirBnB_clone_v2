@@ -5,7 +5,7 @@ from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
 from models.engine.file_storage import FileStorage
-from city import City
+from models.city import City
 import os
 import models
 
