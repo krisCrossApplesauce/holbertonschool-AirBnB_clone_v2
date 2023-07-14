@@ -5,7 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/python/<text>', strict_slashes=False)
+@app.route('/python', '/python/', '/python/<text>', strict_slashes=False)
 def python(text="is cool"):
     return "Python {}".format(text.replace("_", " "))
 
