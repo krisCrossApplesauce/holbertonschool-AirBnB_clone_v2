@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" /cities_by_states """
+""" add /cities_by_states """
 from flask import Flask, render_template
 from models import storage
 
 app = Flask(__name__)
 
 
-@app.teardown_appcontent()
+@app.teardown_appcontent
 def teardown(exception):
     storage.close()
 
