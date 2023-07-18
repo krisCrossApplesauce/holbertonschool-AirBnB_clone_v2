@@ -14,8 +14,7 @@ def teardown(exception):
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
     states = storage.all("States")
-    cities = storage.all("Cities")
-    return render_template('8-cities_by_states.html', states=states.values(), cities=cities.values())
+    return render_template('8-cities_by_states.html', states=states.values())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
