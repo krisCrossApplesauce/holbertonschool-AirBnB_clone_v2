@@ -19,10 +19,11 @@ def states_list():
 
 @app.route('/states/<id>', strict_slashes=False)
 def state_cities(id):
-    state = storage.get(State, id)
+    state = storage.get("State", id)
     if state:
         cities = sorted(state.cities, key=lambda city: city.name)
-        return render_template('9-states.html', not_found=False, state=state, cities=cities)
+        return render_template('9-states.html', not_found=False,
+                               state=state, cities=cities)
     else:
         return render_template('9-states.html', not_found=True)
 
