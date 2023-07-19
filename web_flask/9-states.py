@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ states stuff :P """
 from flask import Flask, render_template
-from models import storage, State
+from models import storage
+from models.state import State
 
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ def states_list():
 
 @app.route('/states/<id>', strict_slashes=False)
 def state_cities(id):
-    state = storage.get("State", id)
+    state = storage.get(State, id)
     if state:
         cities = sorted(state.cities, key=lambda city: city.name)
         return render_template('9-states.html', not_found=False,
