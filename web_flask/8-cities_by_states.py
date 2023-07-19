@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontent
-def teardown(exception):
+def teardown_appcontent(exception):
     """ tears down session """
     storage.close()
 
